@@ -24,7 +24,6 @@ namespace RegionalBuses.HarmonyPatches.CityServiceWorldInfoPanelPatches
             var transportStationAi = buildingAi as TransportStationAI;
             if (transportStationAi == null)
             {
-                label.text = _originalLabel;
                 return;
             }
             var transportLineInfo1 = transportStationAi.GetTransportLineInfo();
