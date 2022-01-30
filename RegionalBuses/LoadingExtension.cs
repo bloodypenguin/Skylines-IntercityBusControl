@@ -1,6 +1,7 @@
 using System;
 using CitiesHarmony.API;
 using ICities;
+using RegionalBuses.HarmonyPatches.BuildingInfoPatches;
 using UnityEngine;
 
 namespace RegionalBuses
@@ -12,6 +13,7 @@ namespace RegionalBuses
         public override void OnCreated(ILoading loading)
         {
             base.OnCreated(loading);
+            InitializePrefabPatch.Reset();
             _loadMode = loading.currentMode;
             try
             {
@@ -29,10 +31,11 @@ namespace RegionalBuses
                 Debug.LogException(e);
             }
         }
-        
+
         public override void OnReleased()
         {
             base.OnReleased();
+            InitializePrefabPatch.Reset();
             try
             {
                 if (_loadMode == AppMode.Game)
