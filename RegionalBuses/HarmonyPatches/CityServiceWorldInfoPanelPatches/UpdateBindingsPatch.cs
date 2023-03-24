@@ -40,6 +40,7 @@ namespace RegionalBuses.HarmonyPatches.CityServiceWorldInfoPanelPatches
             var isVisible = !ships && !intercityTrains && intercityBuses;
             if (isVisible)
             {
+                ___m_intercityTrainsPanel.parent.isVisible = true;
                 ___m_intercityTrainsPanel.isVisible = true;
             }
 
